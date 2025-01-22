@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpankController;
 
 Route::get('/', function () {
-   return view('welcome');
+   return view('index');
 });
 
 Route::get('/page1', [OpankController::class,'page1']);
@@ -15,6 +15,7 @@ Route::get('/page4', [OpankController::class,'page4']);
 Route::get('/main', function () {
    return view('template.main');
 });
+Route::get('/form', [OpankController::class,'form']);
 
 // Route untuk page2
 // Route::get('/page2', function () {

@@ -24,4 +24,9 @@ class OpankController extends Controller
     {
         return view('template\main');
     }
+    public function form()
+    {
+        return view('form');
+    }
+
 };
