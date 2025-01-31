@@ -49,12 +49,7 @@
                   <p>Active Page</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
+
             </ul>
           </li>
           <li class="nav-item">
@@ -66,6 +61,21 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="genre" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Table genre</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="cast" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Table cast</p>
+            </a>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

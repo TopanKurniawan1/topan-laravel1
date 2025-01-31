@@ -17,7 +17,7 @@
     </ul>
     <h3> Ingin bergabung? Ikuti langkah langkah di bawah ini!</h3>
     <ul>
-        <li>klik link form berikut</li><a href="form">daftar disini</a>
+        <li>klik link form berikut</li><a href="genre">daftar disini</a>
         <li>isi data kamu dengan benar</li>
         <li>selesai</li>
     </ul>
