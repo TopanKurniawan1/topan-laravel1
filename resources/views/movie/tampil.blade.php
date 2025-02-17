@@ -1,6 +1,6 @@
 @extends('template.main')
 
-@section('judul', 'data cast')
+@section('judul', 'data movie')
 
 @push('css')
   <link rel="stylesheet" href="{{ asset('/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
@@ -12,8 +12,7 @@
 
 <div class="d-flex">
     <div class="ms-auto">
-        <a class="btn btn-success" href="{{ route("cast.tambah") }}">tambah cast</a>
-
+        <a class="btn btn-success" href="{{ route("movie.tambah") }}">tambah movie</a>
     </div>
 </div>
 
@@ -21,22 +20,24 @@
 
     <tr>
         <th>no</th>
-        <th>nama</th>
-        <th>umur</th>
-        <th>bio</th>
+        <th>judul </th>
+        <th>ringkasan</th>
+        <th>tahun</th>
+        <th>genre</th>
         <th>aksi</th>
     </tr>
 
-    @foreach($casts as $no=>$data)
+    @foreach($movies as $no=>$data)
     <tr>
         <td>{{ $no+1 }}</td>
-        <td>{{ $data->name }}</td>
-        <td>{{ $data->age }}</td>
-        <td class="wrap-text">{{ $data->bio }}</td>
+        <td>{{ $data->title }}</td>
+        <td>{{ $data->summary }}</td>
+        <td>{{ $data->year }}</td>
+        <td>{{ $data->genre->name }}</td>
          <td>
-            <a href="{{ route('cast.edit', $data->id) }}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{{ route('movie.edit', $data->id) }}" class="btn btn-sm btn-warning">Edit</a>
 
-            <form action="{{ route('cast.delete', $data->id) }}" method="post">
+            <form action="{{ route('movie.delete', $data->id) }}" method="post">
                 @csrf
                 <button class="btn btn-sm btn-danger">Delete</button>
             </form>
@@ -44,14 +45,6 @@
     </tr>
     @endforeach
 </table>
-
-<style>
-    .wrap-text {
-        max-width: 200px;
-        word-wrap: break-word;
-        white-space: normal;
-    }
-</style>
 
 @endsection
 

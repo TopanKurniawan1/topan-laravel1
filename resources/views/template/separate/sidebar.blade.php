@@ -44,12 +44,23 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
 
+                <a href="{{ route("genre.tampil") }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Table genre</p>
+                  </a>
+
+                <a href="{{ route("cast.tampil") }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Table cast</p>
+                  </a>
+
+                  <a href="{{ route("movie.tampil") }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Table movie</p>
+                  </a>
+
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -59,20 +70,6 @@
                 register Link
                 <span class="right badge badge-danger">New</span>
               </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="genre" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Table genre</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="cast" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Table cast</p>
             </a>
           </li>
 

@@ -1,6 +1,6 @@
 @extends('template.main')
 
-@section('judul', 'tambah genre')
+@section('judul', 'tambah movie')
 
 @push('css')
 
@@ -24,16 +24,37 @@
     <!-- general form elements -->
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Menambahkan genre</h3>
+            <h3 class="card-title">Menambahkan movie</h3>
         </div>
         <!-- form start -->
-        <form action="{{ route('genre.submit') }}" method="POST">
+        <form action="{{ route('movies.submit') }}" method="POST">
             @csrf
             <div class="card-body">
                 <div class="form-group">
-                    <label for="name">Nama Genre</label>
-                    <input type="text" name="name" class="form-control" required placeholder="Masukkan Nama Genre">
+                    <label for="title">judul</label>
+                    <input type="text" name="title" class="form-control" required placeholder="Masukkan judul">
                 </div>
+
+                <div class="form-group">
+                    <label for="year">tahun</label>
+                    <input type="text" name="year" class="form-control" required placeholder="Masukkan tahun">
+                </div>
+
+                <div class="form-group">
+                    <label for="genre_id">Pilih Genre</label>
+                    <select name="genre_id" class="form-control" required>
+                        <option value="">-- Pilih Genre --</option>
+                        @foreach ($genres as $genre)
+                            <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="summary">ringkasan</label><br>
+                    <textarea name="summary" rows="5" class="form-control" placeholder="Masukan ringkasan" required></textarea>
+                </div>
+
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Tambah</button>

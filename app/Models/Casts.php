@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cast extends Model
+class Casts extends Model
 {
     //
     use HasFactory;
-    protected $table = 'cast';
+    protected $table = 'casts';
 }

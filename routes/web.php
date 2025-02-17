@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpankController;
-use App\Http\Controllers\GenreController;
-use App\Models\Genre;
-use App\Http\Controllers\castController;
-use App\Models\cast;
+use App\Http\Controllers\GenresController;
+use App\Models\Genres;
+use App\Http\Controllers\castsController;
+use App\Models\casts;
+use App\Http\Controllers\MoviesController;
+use App\Models\Movies;
 
 Route::get('/page1', [OpankController::class,'page1']);
 Route::get('/page2', [OpankController::class,'page2']);
@@ -15,19 +17,28 @@ Route::get('/', [OpankController::class,'index']);
 
 
 //route genre
-Route::get('genre', [GenreController::class,'tampil'])->name('genre.tampil');
-Route::get('genre/tambah', [GenreController::class,'tambah'])->name('genre.tambah');
-Route::post('genre/submit', [GenreController::class,'submit'])->name('genre.submit');
-Route::get('genre/edit/{id}', [GenreController::class, 'edit'])->name('genre.edit');
-Route::post('genre/update/{id}', [GenreController::class, 'update'])->name('genre.update');
-Route::post('genre/delete/{id}', [GenreController::class, 'delete'])->name('genre.delete');
+Route::get('genre', [GenresController::class,'tampil'])->name('genre.tampil');
+Route::get('genre/tambah', [GenresController::class,'tambah'])->name('genre.tambah');
+Route::post('genre/submit', [GenresController::class,'submit'])->name('genre.submit');
+Route::get('genre/edit/{id}', [GenresController::class, 'edit'])->name('genre.edit');
+Route::post('genre/update/{id}', [GenresController::class, 'update'])->name('genre.update');
+Route::post('genre/delete/{id}', [GenresController::class, 'delete'])->name('genre.delete');
 
 
 //route cast
-Route::get('cast', [castController::class,'tampil'])->name('cast.tampil');
-Route::get('cast/tambah', [castController::class,'tambah'])->name('cast.tambah');
-Route::post('cast/submit', [castController::class,'submit'])->name('cast.submit');
-Route::get('cast/edit/{id}', [castController::class, 'edit'])->name('cast.edit');
-Route::post('cast/update/{id}', [castController::class, 'update'])->name('cast.update');
-Route::post('cast/delete/{id}', [castController::class, 'delete'])->name('cast.delete');
+Route::get('cast', [castsController::class,'tampil'])->name('cast.tampil');
+Route::get('cast/tambah', [castsController::class,'tambah'])->name('cast.tambah');
+Route::post('cast/submit', [castsController::class,'submit'])->name('cast.submit');
+Route::get('cast/edit/{id}', [castsController::class, 'edit'])->name('cast.edit');
+Route::post('cast/update/{id}', [castsController::class, 'update'])->name('cast.update');
+Route::post('cast/delete/{id}', [castsController::class, 'delete'])->name('cast.delete');
 
+Route::get('movie', [MoviesController::class, 'tampil'])->name('movie.tampil');
+Route::get('movie/tambah', [MoviesController::class, 'tambah'])->name('movie.tambah');
+Route::post('movie/submit', [MoviesController::class, 'submit'])->name('movies.submit');
+Route::get('movie/edit/{id}', [MoviesController::class, 'edit'])->name('movie.edit');
+Route::put('/movie/update/{id}', [MoviesController::class, 'update'])->name('movie.update');
+Route::post('/movie/delete/{id}', [MoviesController::class, 'delete'])->name('movie.delete');
+
+
+// Route::resource('/movie', MovieController::class);

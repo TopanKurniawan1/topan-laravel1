@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cast', function (Blueprint $table) {
+        Schema::create('actors', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 45);
-            $table->integer('umur');
-            $table->text('bio');
+            $table->foreignid(column: 'movie_id')->references('id')->on('movies');
+            $table->foreignid(column: 'cast_id')->constrained()->references('id')->on('casts');
+            $table->string('nama', 45,);
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cast');
+        Schema::dropIfExists('actors');
     }
 };
